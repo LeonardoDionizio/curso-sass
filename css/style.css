@@ -1,0 +1,110 @@
+nav {
+  background: #222fff;
+  color: #fff;
+  width: 300;
+  font-size: 1.2rem; }
+
+aside {
+  width: 300px; }
+
+section {
+  font-family: "Lucida Grande";
+  font-weight: bold; }
+
+body {
+  background: red;
+  color: #fff; }
+
+section {
+  background: rgba(0, 0, 0, 0.7);
+  margin: 10px 20px 5px 10px; }
+
+p.destaque {
+  border-color: #fff; }
+
+p {
+  font: 12px/30px; }
+
+.msg, .msg-error, .msg-success {
+  border: 1px solid;
+  padding: 4px;
+  text-align: center; }
+
+.msg-error {
+  border-color: red;
+  color: #fff; }
+
+.msg-success {
+  border-color: green;
+  color: #fff; }
+
+a:hover, .hoverlink {
+  text-decoration: underline; }
+
+.hoverlink {
+  color: #000; }
+
+.error, .seriousError {
+  border: 1px #f00;
+  background-color: #fdd; }
+
+.attention, .seriousError {
+  font-size: 3em;
+  background-color: #ff0; }
+
+.seriousError {
+  border-width: 3px; }
+
+h1 {
+  font-size: 7px; }
+
+h2 {
+  font-size: 3px; }
+
+h6 {
+  font: 10px/8px bold italic serif;
+  width: 500px;
+  width: 1;
+  height: 250px;
+  margin-left: 9px;
+  font: italic bold 1.25;
+  font-size: 20px / 22px; }
+
+h3 {
+  font-size: 1px; }
+
+p {
+  cursor: e-resize; }
+
+p:before {
+  content: "Eu tenho 12 moedas."; }
+
+p:before {
+  content: "Eu tenho  moedas."; }
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
+
+h1 {
+  color: blue;
+  size: 14px; }
+
+h1 {
+  color: green;
+  size: 14px; }
+
+p {
+  padding: 10px 20px 30px; }
+
+div {
+  width: 65%; }
+
+div, p {
+  display: block;
+  margin: 0 auto; }
+
+header {
+  color: #000; }

@@ -1,0 +1,213 @@
+$width: 100px;
+$font-size: 1.2rem;
+$background: #222fff;
+$color: #fff;
+$border-style: solid 1px $color;
+
+$width-rem: 3.5rem;
+$width-px: 300px;
+$width: 300;
+
+$font: "Lucida Grande";
+$weight: bold;
+
+$bg: red;
+$bg-section: (rgba(0, 0, 0, 0.7));
+$font-color: #fff;
+
+$margin: 10px 20px 5px 10px;
+
+$social: (facebook: #3b5998, youtube: #b00);
+
+$name: destaque;
+$attr: border;
+
+nav {
+	background: $background;
+	color: $color;
+	width: $width;
+	font-size: $font-size;
+}
+
+aside {
+	width: $width-px;
+}
+
+section {
+	font-family: $font;
+	font-weight: $weight;
+}
+
+body {
+	background: $bg;
+	color: $font-color;
+}
+
+section {
+	background: $bg-section;
+	margin: $margin;
+}
+
+p.#{$name} {
+	#{$attr}-color: $color;
+}
+
+p {
+	$font-size: 12px;
+	$line-height: 30px;
+	font: #{$font-size}/#{$line-height};
+}
+
+.msg {
+	border: 1px solid;
+	padding: 4px;
+	text-align: center;
+}
+
+.msg-error {
+	@extend .msg;
+	border-color: red;
+	color: #fff;
+}
+
+.msg-success {
+	@extend .msg;
+	border-color: green;
+	color: #fff;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+.hoverlink {
+	@extend a:hover;
+	color: #000;
+}
+
+.error {
+	border: 1px #f00;
+	background-color: #fdd;
+}
+.attention {
+	font-size: 3em;
+	background-color: #ff0;
+}
+.seriousError {
+	@extend .error;
+	@extend .attention;
+	border-width: 3px;
+}
+
+h1 {
+	//font-size: 2em + 7px; //unidades incompativeis
+	font-size: 5px + 2; //7px
+	//font-size: 5px * 2px; //unidade invalida
+}
+
+h2 {
+	font-size: 5px - 2;
+}
+
+$base-size: 20px;
+$line-height: 22px;
+
+h6 {
+	font: 10px/8px bold italic serif;
+	$width: 1000px;
+	width: $width/2;
+	width: round(1.5)/2;
+	height: (500px/2);
+	margin-left: 5px + 8px/2px;
+	font: (italic bold (10px/8px));
+	font-size: #{$base-size} / #{$line-height};
+}
+
+$font-size: 27px;
+h3 {
+	font-size: $font-size% 2;
+}
+
+p {
+	cursor: e + -resize;
+}
+
+p:before {
+	content: "Eu tenho #{2+10} moedas.";
+}
+
+$value: null;
+p:before {
+	content: "Eu tenho #{$value} moedas.";
+}
+
+//mixin----------------------------------
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+.box {
+	@include border-radius(10px);
+}
+
+@mixin titulo($size, $color: blue) {
+	color: $color;
+	size: $size;
+}
+
+h1 {
+	@include titulo (14px);
+}
+h1 {
+	@include titulo ($size: 14px,$color: green);
+}
+
+@mixin pad($values...) {
+	padding: $values;
+}
+
+p {
+	@include pad(10px 20px 30px);
+}
+
+//funcoes----------------------------------
+@function calc-fluid($target, $container) {
+	@return ($target / $container) * 100%;
+}
+
+div {
+	width: calc-fluid(650px, 1000px);
+}
+
+//placeholder----------------------------------
+%center {
+	display: block;
+	margin: 0 auto;
+}
+
+@mixin center {
+	display: block;
+	margin: 0 auto;
+}
+
+div {
+	@extend %center;
+}
+
+p {
+	@extend %center;
+}
+
+$template: dark;
+
+header {
+	@if ($template == blue) {
+		color: blue;
+	} @else if($template == dark) {
+		color: #000;
+	} @else {
+		color: #ccc;
+	}
+}
